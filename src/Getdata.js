@@ -5,7 +5,7 @@ const Getdata = () => {
     const[data,setData]=useState([])
 
     useEffect(()=>{
-        axios.get("https://dummyjson.com/c/5492-662f-4043-b804")
+        axios.get("http://localhost:5000/wheather")
         .then((res)=>{setData(res.data)})
     },[])
 
@@ -16,8 +16,8 @@ const Getdata = () => {
             <tr>
                 <b>
                 <td>Name</td>
-                <td>Email</td>
-                <td>Id</td>
+                <td>City</td>
+                {/* <td>Id</td> */}
                 </b>
             </tr>
         </thead>
@@ -27,11 +27,10 @@ const Getdata = () => {
         data.map((i)=>{
             return(
                 <>
-                
                    <tbody>
                     <td>{i.name}</td>
-                    <td>{i.email}</td>
-                    <td>{i.id}</td>
+                    <td>{i.city}</td>
+                    {/* <td>{i.id}</td> */}
                    </tbody>
                 </>
             )
